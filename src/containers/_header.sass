@@ -1,0 +1,70 @@
+header
+    z-index: 999
+    padding: 0 40px
+    box-sizing: border-box
+    position: fixed
+    top: 0
+    right: 0
+    width: 100%
+    background-color: $blue
+    height: 60px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.header-container
+    margin: 0 !important
+
+
+$hover: #05689C
+
+.logo
+    font-size: 26px
+    color: #ffffff
+    font-weight: 600
+    
+
+.menu
+    display: flex
+    margin: 0
+    list-style: none
+    color: #fff
+    &__category
+        padding: 19px 20px
+        &:hover
+            background-color: $hover
+    &__block
+        position: relative
+        font-size: 18px
+        font-weight: 500
+        padding: 19px 0
+        cursor: pointer
+    &__submenu
+        display: none
+        list-style: none
+        padding: 10px 0
+        position: absolute
+        width: 100%
+        min-width: max-content
+    &__item
+        padding: 5px
+        font-size: 16px
+        font-weight: 400
+        cursor: pointer
+        &:hover
+            background-color: $hover
+    &__link
+        text-decoration: none
+        color: #ffffff
+
+.menu-auth
+    font-size: 18px
+    font-weight: 500
+    color: #ffffff
+    text-decoration: none
+
+
+
+
+
+

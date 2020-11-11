@@ -1,0 +1,69 @@
+
+$blue: #005887
+$pink: #E8345F
+$black: #00022F
+$grey: #A5A5A5
+$shadow: 0px 0px 20px rgba(0, 0, 0, 0.07)
+
+@import './containers/header'
+@import './components/search/searchForm'
+@import './components/search/searchResult'
+@import './components/tenderCard'
+
+body
+    margin: 0
+    padding: 0
+    font-family: 'Exo 2', sans-serif
+    background-color: #F2F7F9
+    letter-spacing: .7px
+
+.container
+    position: relative
+    box-sizing: border-box
+    width: 1280px
+    margin: 60px auto 0 auto
+    padding: 50px 30px
+
+h1
+    color: $black
+    font-size: 32px
+    font-weight: 500
+    &::after
+        content: ""
+        display: block
+        border-bottom: 3px solid $pink
+        width: 55px
+        margin-top: 4px
+
+h3
+    color: $black
+    font-size: 22px
+    font-weight: 500
+    margin: 0
+
+
+input
+    outline: none
+    border: none
+    border-radius: 5px
+    font-family: 'Exo 2', sans-serif
+    font-size: 16px
+    padding: 17px 25px
+    box-shadow: $shadow
+    box-sizing: border-box
+
+.btn
+    outline: none
+    border: none
+    border-radius: 5px
+    color: #ffffff
+    background-color: $pink
+    font-size: 18px
+    font-weight: 500
+    padding: 16px 43px
+    cursor: pointer
+    box-sizing: border-box
+
+
+.pink
+    color: $pink
