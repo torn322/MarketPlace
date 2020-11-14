@@ -6,6 +6,13 @@
     background-color: #ffffff
     box-shadow: $shadow
     border-radius: 5px
+    animation-name: downscale-tender-card
+    animation-duration: .1s
+    &:hover
+        animation-name: upscale-tender-card
+        animation-duration: .1s
+        transform: scale(1.02)
+
     &__indicator
         width: 26px
         height: 26px
@@ -36,4 +43,25 @@
     &__finish-date
         color: $grey
         font-size: 14px
+
+
+@keyframes upscale-tender-card
+    from
+        transform: scale(1)
+        
+    to
+        transform: scale(1.02)
+
+@keyframes downscale-tender-card
+    from
+        transform: scale(1.02)
+        
+    to
+        transform: scale(1)
+
+        
+
+
+
+        
         
