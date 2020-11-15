@@ -1,43 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import SearchForm from '../components/search/SearchForm'
-import SearchResult from './SearchResult'
 
-import { advancedSearchHandler } from '../actions/search'
+import Search from './Search'
+import Tender from './Tender'
+
+
 
 class Content extends React.Component {
     render() {
-        console.log(this.props)
-        const { isAdvanced } = this.props.search.form
-        const { advancedSearchHandler } = this.props
         return (
-            <div className="container">
-                <h1>Все процедуры</h1>
-                <SearchForm advancedSearchHandler={ advancedSearchHandler } isAdvanced={ isAdvanced }/>
-                <SearchResult />
-            </div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/' component={Search} />
+                    <Route path='/tender/:id' component={Tender}/>
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
 
 
-const mapStateToProps = store => { 
-    console.log(store)
-    return {
-      search: store.search,
-    }
-  }
   
-const mapDispatchToProps = dispatch => {
-    return {
-        advancedSearchHandler: (isAdvanced) => dispatch(advancedSearchHandler(isAdvanced))
-    }
-  }
-  
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-    )(Content)
+export default Content
 
-// export default Content

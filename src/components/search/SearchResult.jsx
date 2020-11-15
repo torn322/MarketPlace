@@ -1,6 +1,7 @@
 import React from 'react'
-import SearchForm from '../components/search/SearchForm'
-import SearchResultItem from '../components/search/SearchResultItem'
+
+import SearchForm from './SearchForm'
+import SearchResultItem from './SearchResultItem'
 
 
 

@@ -4,6 +4,7 @@ import Content from './content'
 
 
 
+
 class App extends React.Component {
   render() {
     const { store } = this.props

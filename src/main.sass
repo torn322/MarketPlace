@@ -8,7 +8,9 @@ $shadow: 0px 0px 20px rgba(0, 0, 0, 0.07)
 @import './containers/header'
 @import './components/search/searchForm'
 @import './components/search/searchResult'
-@import './components/tenderCard'
+@import './components/tender/tenderCard'
+@import './components/tender/docs'
+@import './components/tender/questions'
 
 body
     margin: 0
@@ -35,11 +37,28 @@ h1
         width: 55px
         margin-top: 4px
 
+h2
+    color: $black
+    font-size: 28px
+    font-weight: 500
+    &::after
+        content: ""
+        display: block
+        border-bottom: 3px solid $pink
+        width: 35px
+        margin-top: 4px
+
+
+
 h3
     color: $black
     font-size: 22px
     font-weight: 500
     margin: 0
+
+h4
+    margin: 0
+    font-weight: 500
 
 
 input
@@ -67,3 +86,13 @@ input
 
 .pink
     color: $pink
+
+
+.form-group-row
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.form-underline
+    border: 1px solid #E5E5E5
+    margin-top: 40px

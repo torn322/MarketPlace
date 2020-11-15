@@ -30,12 +30,31 @@
         font-size: 22px
         font-weight: bold
     &__description
-        margin: 10px 0
+        margin: 10px 0 20px 0
         max-width: 895px
         color: $black
         font-size: 16px
         font-weight: 200
         line-height: 166%
+    &__team
+        display: flex
+        margin: 10px 0 20px 0
+    &__team-item
+        box-shadow: $shadow
+        padding: 10px 20px 
+        font-size: 16px
+        color: $blue
+        display: flex
+        align-items: center
+        margin-right: 25px
+        border-radius: 5px
+    &__team-amount
+        font-size: 18px
+        color: $pink
+        font-weight: 800
+        opacity: .5
+        margin-left: 5px
+
     &__footer
         width: 100%
         display: flex
@@ -58,6 +77,24 @@
         
     to
         transform: scale(1)
+
+
+
+.tender-card_extended
+    animation: none !important
+    margin-bottom: 50px
+    &:hover
+        transform: none
+        animation: none !important
+    .tender-card__footer
+        justify-content: space-between
+        align-items: flex-end
+        margin-top: 35px
+
+    
+    
+
+
 
         
 
