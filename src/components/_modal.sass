@@ -1,0 +1,38 @@
+.modal-bg-dark
+    position: fixed
+    top: 0
+    left: 0
+    background-color: $black
+    width: 100vw
+    height: 100vh
+    opacity: .3
+
+
+.modal-wrap
+    z-index: 10
+    position: fixed
+    top: 200px
+    left: calc(50vw - 375px)
+
+.modal
+    position: relative
+    z-index: 20
+    background-color: #FAFDFF
+    width: 750px
+    padding: 50px
+    box-sizing: border-box
+    border-radius: 5px
+    box-shadow: $shadow
+    &__header
+        background-color: $blue
+        height: 60px
+        width: 100%
+        position: absolute
+        left: 0
+        top: 0
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        color: #ffffff
+        cursor: pointer

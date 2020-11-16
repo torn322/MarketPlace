@@ -1,6 +1,17 @@
 import React from 'react'
+import Modal from '../Modal'
+import Order from '../tender/Order'
 
 class TenderCardExtended extends React.Component {
+
+    state = {
+        isModalVisible: false
+    }
+
+    modalHandler = () => {
+        this.setState({isModalVisible: !this.state.isModalVisible})
+    }
+
     render() {
         return (
             <div className="tender-card tender-card_extended">
@@ -27,9 +38,10 @@ class TenderCardExtended extends React.Component {
                 <h4 className="tender-card__subtitle">Технологический стек</h4>
                 <p className="tender-card__description">React.js, Sass, Java, MySql, React.js, Sass, Java, MySql, </p>
                 <div className="tender-card__footer">
-                    <button className="btn">Подать заявку</button>
+                    <button className="btn" onClick={this.modalHandler}>Подать заявку</button>
                     <span className="tender-card__finish-date">Подача заявок до: <span className="pink">27.10.2020 </span></span>
                 </div>
+                <Modal content={ <Order /> } isVisible={ this.state.isModalVisible } handler={this.modalHandler}/>
             </div>
         )
     }
