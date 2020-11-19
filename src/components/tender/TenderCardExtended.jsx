@@ -41,7 +41,10 @@ class TenderCardExtended extends React.Component {
                     <button className="btn" onClick={this.modalHandler}>Подать заявку</button>
                     <span className="tender-card__finish-date">Подача заявок до: <span className="pink">27.10.2020 </span></span>
                 </div>
-                <Modal content={ <Order /> } isVisible={ this.state.isModalVisible } handler={this.modalHandler}/>
+                {this.state.isModalVisible ? 
+                    <Modal handler={this.modalHandler}>
+                        <Order />
+                    </Modal> : null}
             </div>
         )
     }

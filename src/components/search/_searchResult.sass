@@ -1,11 +1,30 @@
 .search-result
-    margin-top: 50px
+    // margin-top: 50px
     list-style: none
     padding: 0
     &__item
-        margin: 20px 0
+        margin: 0 0 20px
+        animation-name: downscale-card
+        animation-duration: .1s
+        &:hover
+            animation-name: upscale-card
+            animation-duration: .1s
+            transform: scale(1.02)
     &__link
         text-decoration: none
     
         
 
+@keyframes upscale-card
+    from
+        transform: scale(1)
+        
+    to
+        transform: scale(1.02)
+
+@keyframes downscale-card
+    from
+        transform: scale(1.02)
+        
+    to
+        transform: scale(1)

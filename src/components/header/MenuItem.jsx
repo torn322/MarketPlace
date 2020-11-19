@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class MenuItem extends React.Component {
     submenuRef = React.createRef()
@@ -19,7 +20,7 @@ class MenuItem extends React.Component {
                 <ul className="menu__submenu" ref={this.submenuRef}>
                     {submenu.map((item, i) => 
                         <li className="menu__item" key={i}> 
-                            <a href={item.link} className="menu__link">{item.text}</a>
+                            <Link to={item.link} className="menu__link">{item.text}</Link>
                         </li>
                     )}
                 </ul>

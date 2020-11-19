@@ -11,28 +11,40 @@
 .modal-wrap
     z-index: 10
     position: fixed
-    top: 200px
-    left: calc(50vw - 375px)
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+
+
+   
 
 .modal
-    position: relative
+    position: absolute
     z-index: 20
     background-color: #FAFDFF
     width: 750px
-    padding: 50px
     box-sizing: border-box
     border-radius: 5px
     box-shadow: $shadow
+    top: 50%
+    transform: translateY(-50%)
+    left: calc(50vw - 375px)
+    // left: 50%
+
     &__header
         background-color: $blue
         height: 60px
         width: 100%
-        position: absolute
-        left: 0
-        top: 0
     &__close
         position: absolute
         top: 20px
         right: 20px
         color: #ffffff
         cursor: pointer
+    &__content
+        padding: 0px 50px 30px 50px
+        overflow-y: scroll
+        max-height: 80vh
+        &::-webkit-scrollbar 
+            display: none

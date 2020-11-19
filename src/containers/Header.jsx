@@ -9,32 +9,24 @@ class Header extends React.Component {
                 <div className="container header-container">
                     <ul className="menu">
                         <MenuItem 
-                            category="Торги"
+                            category="Закупки"
                             submenu={[
                                 {
-                                    text: 'Any link 1',
-                                    link: '#'
+                                    text: 'Поиск',
+                                    link: '/'
                                 },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
-                                }
                             ]}
                         />
                         <MenuItem 
-                            category="Поставщикам"
+                            category="Поставщики"
                             submenu={[
                                 {
-                                    text: 'Any link 1',
-                                    link: '#'
-                                },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
+                                    text: 'Поиск',
+                                    link: '/contractors'
                                 }
                             ]}
                         />
-                        <MenuItem 
+                        {/* <MenuItem 
                             category="Заказчикам"
                             submenu={[
                                 {
@@ -59,7 +51,7 @@ class Header extends React.Component {
                                     link: '#'
                                 }
                             ]}
-                        />
+                        /> */}
                     </ul>
                 </div>
                 <a href="#" className="menu-auth">Войти</a>

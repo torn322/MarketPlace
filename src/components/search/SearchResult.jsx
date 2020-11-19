@@ -9,12 +9,13 @@ import SearchResultItem from './SearchResultItem'
 
 class SearchResult extends React.Component {
     render() {
+        const { type } = this.props
         return (
             <ul className="search-result">
-                <SearchResultItem />
-                <SearchResultItem />
-                <SearchResultItem />
-                <SearchResultItem />
+                <SearchResultItem type={ type }/>
+                <SearchResultItem type={ type }/>
+                <SearchResultItem type={ type }/>
+                <SearchResultItem type={ type }/>
             </ul>
         )
     }

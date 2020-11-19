@@ -13,13 +13,26 @@ $shadow: 0px 0px 20px rgba(0, 0, 0, 0.07)
 @import './components/tender/questions'
 @import './components/modal'
 @import './components/tender/order'
+@import './components/contractors/contractorCard'
+@import './components/contractors/editContractorInfo'
+@import './components/common/form/taginput'
+@import './components/common/tag'
+@import './components/tender/editPurchase'
 
 body
     margin: 0
     padding: 0
+    color: $black
     font-family: 'Exo 2', sans-serif
     background-color: #F2F7F9
     letter-spacing: .7px
+
+
+
+
+
+a
+    color: unset
 
 .container
     position: relative
@@ -32,6 +45,7 @@ h1
     color: $black
     font-size: 32px
     font-weight: 500
+    margin: 0 0 30px 0
     &::after
         content: ""
         display: block
@@ -43,6 +57,7 @@ h2
     color: $black
     font-size: 28px
     font-weight: 500
+    margin: 50px 0 30px 0 
     &::after
         content: ""
         display: block
@@ -63,7 +78,7 @@ h4
     font-weight: 500
 
 
-input, textarea
+input, textarea, select
     outline: none
     border: none
     border-radius: 5px
@@ -97,6 +112,14 @@ input, textarea
     display: flex
     align-items: center
     justify-content: space-between
+
+.labeled-field
+    display: flex
+    flex-direction: column
+    span
+        color: $grey
+        font-weight: 300
+        margin-bottom: 10px
 
 .form-underline
     border: 1px solid #E5E5E5
