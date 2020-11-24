@@ -16,8 +16,11 @@ $shadow: 0px 0px 20px rgba(0, 0, 0, 0.07)
 @import './components/contractors/contractorCard'
 @import './components/contractors/editContractorInfo'
 @import './components/common/form/taginput'
+@import './components/common/form/fileinput'
 @import './components/common/tag'
 @import './components/tender/editPurchase'
+@import './components/common/file'
+@import './components/loading/purchaseCardPlug'
 
 body
     margin: 0
@@ -40,6 +43,11 @@ a
     width: 1280px
     margin: 60px auto 0 auto
     padding: 50px 30px
+    &-header
+        display: flex
+        justify-content: space-between
+        .btn
+            height: 100%
 
 h1
     color: $black
@@ -78,7 +86,7 @@ h4
     font-weight: 500
 
 
-input, textarea, select
+input, textarea, select, .fake-input
     outline: none
     border: none
     border-radius: 5px
@@ -87,6 +95,10 @@ input, textarea, select
     padding: 17px 25px
     box-shadow: $shadow
     box-sizing: border-box
+
+.fake-input
+    display: block
+    background-color: #fff
 
 
 .btn
@@ -100,6 +112,8 @@ input, textarea, select
     padding: 16px 43px
     cursor: pointer
     box-sizing: border-box
+    width: max-content
+
     &_blue
         background-color: $blue
 
@@ -124,3 +138,15 @@ input, textarea, select
 .form-underline
     border: 1px solid #E5E5E5
     margin-top: 40px
+
+
+a
+    text-decoration: none
+
+
+.indicator
+    width: 26px
+    height: 26px
+    display: block
+    &_grey
+        background-image: url('../img/indicator_grey.svg')

@@ -5,7 +5,7 @@ class Question extends React.Component {
         return (
             <div className="question">
                 <i className="question__pic"></i>
-                <h3 className="question__title">Заголовок вопроса</h3>
+                <h3 className="question__title">Наименование компании</h3>
                 <p className="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Quisque a auctor turpis. Quisque ac cursus justo. Suspendisse suscipit eros at finibus 
                     pellentesque. Donec at bibendum leo. Vestibulum elementum nulla eu elit dictum tristique. Nunc </p>

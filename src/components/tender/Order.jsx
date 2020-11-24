@@ -1,6 +1,18 @@
 import React from 'react'
+import FileInput from '../common/form/FileInput'
 
 class Order extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            files: null
+        }
+    }
+
+    addFiles = (files) => {
+        this.setState({files})
+    }
+
     render() {
         return (
             <div className="order">
@@ -12,10 +24,7 @@ class Order extends React.Component {
                 </p>
                 <form action="" className="order__form">
                     <textarea className="order__message" placeholder="Напишите сообщение" required></textarea>
-                    <div className="form-group-row">
-                        <input type="file" placeholder="Выберите файл" draggable className="order__file"/>
-                        <button className="btn btn_blue">Загрузить</button>
-                    </div>
+                    <FileInput onChange={this.addFiles}/>
                     <button type="submit" className="btn">Подать заявку</button>
                 </form>
             </div>

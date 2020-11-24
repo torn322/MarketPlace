@@ -1,12 +1,11 @@
 import React from 'react'
 import Modal from '../Modal'
-import EditPurchase from '../tender/EditPurchase'
 import ContractorCard from './ContractorCard'
 import EditContractorInfo from './EditContractorInfo'
 
 class ContractorCardExtended extends React.Component {
     state = {
-        isOrderModalVisible: true
+        isOrderModalVisible: false
     }
 
     modalHandler = () => {
@@ -21,13 +20,13 @@ class ContractorCardExtended extends React.Component {
     )
 
     render() {
+        const {info} = this.props
         return (
             <div className="">
-                <ContractorCard extention={ this.extention }/>
+                <ContractorCard extention={ this.extention } info={info}/>
                 {this.state.isOrderModalVisible ? 
                     <Modal handler={this.modalHandler}>
-                        {/* <EditContractorInfo /> */}
-                        <EditPurchase />
+                        <EditContractorInfo info={info} closeModal={this.modalHandler}/>
                     </Modal> : null} 
             </div>
         )

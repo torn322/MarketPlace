@@ -6,17 +6,18 @@ import ContractorCard from '../contractors/ContractorCard'
 
 class SearchResultItem extends React.Component {
     componentHandler = () => {
+        const {item} = this.props
         switch (this.props.type) {
             case 'tender':
                 return (
-                    <Link to='tender/tenderId' className='search-result__link'>
-                        <TenderCard />
+                    <Link to={`purchase/${item.id}`} className='search-result__link'>
+                        <TenderCard info={item}/>
                     </Link>
                 )
             case 'contractor':
                 return (
-                    <Link to='contractors/contractorId' className='search-result__link'>
-                        <ContractorCard />
+                    <Link to={`contractor/${item.id}`} className='search-result__link'>
+                        <ContractorCard info={item}/>
                     </Link>
                 )
         

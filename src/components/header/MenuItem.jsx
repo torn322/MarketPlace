@@ -15,16 +15,18 @@ class MenuItem extends React.Component {
     render() {
         const {category, submenu} = this.props
         return (
-            <li className="menu__block" onMouseOver={this.showSubmenu} onMouseLeave={this.hideSubmenu}>
+            <Link to={this.props.link}>
+            <li className="menu__block">
                 <span className="menu__category">{category}</span>
-                <ul className="menu__submenu" ref={this.submenuRef}>
+                {/* <ul className="menu__submenu" ref={this.submenuRef}>
                     {submenu.map((item, i) => 
                         <li className="menu__item" key={i}> 
                             <Link to={item.link} className="menu__link">{item.text}</Link>
                         </li>
                     )}
-                </ul>
+                </ul> */}
             </li>
+            </Link>
         )
     }
 }

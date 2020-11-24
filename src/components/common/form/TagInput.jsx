@@ -9,8 +9,8 @@ class TagInput extends React.Component {
         this.amountRef = React.createRef()
         this.state = {
             currentTag: {
-                name: '',
-                amount: '',
+                role: '',
+                count: 1,
             },
             taglist: this.props.tagList || []
         }
@@ -24,8 +24,12 @@ class TagInput extends React.Component {
     }
 
     handleChange = (e) => {
-        const value = e.target.value
+        let value = e.target.value 
         const name = e.target.name
+
+        if (name === 'count') {
+            value = parseInt(value)
+        }
 
         this.setState({...this.state,  currentTag: {
             ...this.state.currentTag, [name]: value
@@ -35,15 +39,17 @@ class TagInput extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        if (this.state.currentTag.name.replaceAll(' ', '').length) {
+        if (this.state.currentTag.role.replaceAll(' ', '').length) {
             this.setState((state) => {
                 let taglist = state.taglist
+                
+                state.currentTag.count = state.currentTag.count < 1 ? 1 : state.currentTag.count
                 taglist.push(state.currentTag)
 
                 const newState = {
                     currentTag: {
-                        name: '',
-                        amount: ''
+                        role: '',
+                        count: ''
                     },
                     taglist
                 }
@@ -72,18 +78,19 @@ class TagInput extends React.Component {
             <div className="taginput">
                 <div className="form-group-row">
                     <div className="taginput__input">
-                        <input ref={this.nameRef} type="text" name="name" className="taginput__text"value={currentTag.name} onChange={this.handleChange}/>
+                        <input ref={this.nameRef} type="text" name="role" className="taginput__text"value={currentTag.role} onChange={this.handleChange}/>
                         <hr/>
-                        <input ref={this.amountRef} type="tel" name="amount" className="taginput__amount"value={currentTag.amount} onChange={this.handleChange}/>
+                        <input ref={this.amountRef} type="number" name="count" className="taginput__amount"value={currentTag.count} onChange={this.handleChange}/>
                     </div>
                     <button className="btn btn_blue" onClick={this.handleSubmit} onKeyPress={this.handleKeyPress}>Добавить</button>
                 </div>
                 <div className="taginput__tags">
                     {taglist.map((item, i) => <Tag 
-                        name={ item.name } 
-                        amount={ item.amount }
+                        name={ item.role } 
+                        amount={ item.count }
                         index={ i }
                         key={ i }
+                        canBeDeleted = {true}
                         handleDelete={ this.handleDelete }
                     />)}
                 </div>
