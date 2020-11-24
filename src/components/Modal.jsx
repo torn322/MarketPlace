@@ -1,13 +1,27 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 
 
 class Modal extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.el = document.createElement('div')
+        this.modalContentRef = React.createRef()
+    }
+
+
+    componentDidMount = () => {
+        this.modalContentRef.current.appendChild(this.el)
+    }
+    
+    componentWillUnmount = () => {
+        this.modalContentRef.current.removeChild(this.el)
+    }
+
     render() {
-        const { content, isVisible, handler } = this.props
-        
-        if (isVisible)
+        const { handler } = this.props
         return (
             <React.Fragment>
                 <div className="modal-wrap">
@@ -16,12 +30,13 @@ class Modal extends React.Component {
                         <div className="modal__header">
                             <div className="modal__close" onClick={handler}>X</div>
                         </div>
-                            {content}
+                        <div className="modal__content" ref={ this.modalContentRef }>
+                            { ReactDOM.createPortal(this.props.children, this.el) }
+                        </div>
                     </div>
                 </div>
             </React.Fragment>
         )
-        return null
     }
 }
 

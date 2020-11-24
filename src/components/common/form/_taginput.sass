@@ -1,0 +1,35 @@
+.taginput
+    position: relative
+    hr
+        display: block
+        height: 35px
+        margin: 0
+        border: 1px solid #E3E3E3
+    input
+        box-shadow: none
+        border-radius: unset
+    &__input
+        box-shadow: $shadow
+        display: flex
+        align-items: center
+        max-width: 100%
+        background-color: #fff
+        border-radius: 5px
+        overflow: hidden
+    &__text
+        min-width: 85%
+    &__amount
+        width: 15%
+        padding: 17px 
+    &__tags
+        margin-top: 20px
+        .tag
+            margin: 0 20px 20px 0
+            cursor: pointer
+            animation-name: downscale-card
+            animation-duration: .1s
+            &:hover
+                animation-name: upscale-card
+                animation-duration: .1s 
+                transform: scale(1.05)
+                opacity: .5

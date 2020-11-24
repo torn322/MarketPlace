@@ -1,20 +1,30 @@
 
 
 
-export function advancedSearchHandler(isAdvanced) {
-    const advancedFilters = document.getElementsByClassName('search-form__advanced-filters')[0]
-    console.log(advancedFilters)
-    
-    if (isAdvanced) {
-        advancedFilters.classList.remove('search-form__advanced-filters_opened')
-        advancedFilters.classList.add('search-form__advanced-filters_closed')
-    } else {
-        advancedFilters.classList.remove('search-form__advanced-filters_closed')
-        advancedFilters.classList.add('search-form__advanced-filters_opened')
-    }
-
+export function setPurchaseList(purchases) {
     return {
-        type: 'CHANGE_ADVANCED_STATUS',
-        payload: !isAdvanced
+        type: 'SET_PURCHASE_LIST',
+        payload: purchases
+    }
+}
+
+export function setContractorList(contractors) {
+    return {
+        type: 'SET_CONTRACTOR_LIST',
+        payload: contractors
+    }
+}
+
+export function setErr(err) {
+    console.error(err)
+    return {
+        type: 'SET_ERROR',
+        payload: err.message
+    }
+}
+
+export function clearResult() {
+    return {
+        type: 'CLEAR_RESULT',
     }
 }

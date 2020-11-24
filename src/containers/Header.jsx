@@ -9,56 +9,12 @@ class Header extends React.Component {
                 <div className="container header-container">
                     <ul className="menu">
                         <MenuItem 
-                            category="Торги"
-                            submenu={[
-                                {
-                                    text: 'Any link 1',
-                                    link: '#'
-                                },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
-                                }
-                            ]}
+                            category="Закупки"
+                            link="/"
                         />
                         <MenuItem 
-                            category="Поставщикам"
-                            submenu={[
-                                {
-                                    text: 'Any link 1',
-                                    link: '#'
-                                },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
-                                }
-                            ]}
-                        />
-                        <MenuItem 
-                            category="Заказчикам"
-                            submenu={[
-                                {
-                                    text: 'Any link 1',
-                                    link: '#'
-                                },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
-                                }
-                            ]}
-                        />
-                        <MenuItem 
-                            category="О площадке"
-                            submenu={[
-                                {
-                                    text: 'Any link 1',
-                                    link: '#'
-                                },
-                                {
-                                    text: 'Any link 2',
-                                    link: '#'
-                                }
-                            ]}
+                            category="Поставщики"
+                            link="/contractor"
                         />
                     </ul>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Content from './content'
+import {BrowserRouter} from 'react-router-dom'
 
 
 
@@ -10,9 +11,11 @@ class App extends React.Component {
     const { store } = this.props
     return (
       <React.Fragment>
-        <Header />
-        <Content store={ store }/>
-        {/* <Footer /> */}
+        <BrowserRouter>
+          <Header />
+          <Content store={ store }/>
+          {/* <Footer /> */}
+        </BrowserRouter>
       </React.Fragment>
     )
   }

@@ -1,18 +1,42 @@
 const initialState = {
-    form: {
-        isAdvanced: false
-    }
+    result: null,
+    err: null
 }
 
-const CHANGE_ADVANCED_STATUS = 'CHANGE_ADVANCED_STATUS'
+const SET_PURCHASE_LIST = 'SET_PURCHASE_LIST'
+const SET_CONTRACTOR_LIST = 'SET_CONTRACTOR_LIST'
+const CLEAR_RESULT = 'CLEAR_RESULT'
+const SET_ERROR = 'SET_ERROR'
 
 export function searchReducer (state = initialState, action) {
     switch (action.type) {
-        case CHANGE_ADVANCED_STATUS:
-            console.log(action.payload)
-            return {...state, form: {
-                isAdvanced: action.payload
-            }}
+        case SET_PURCHASE_LIST:
+            return {
+                ...state, 
+                result: action.payload,
+                err: null
+            }
+
+        case SET_CONTRACTOR_LIST:
+            return {
+                ...state, 
+                result: action.payload,
+                err: null
+            }
+
+        case CLEAR_RESULT:
+            return {
+                ...state, 
+                result: null,
+                err: null
+            }
+
+        case SET_ERROR:
+            return {
+                ...state, 
+                result: null,
+                err: action.payload
+            }      
             
     
         default:

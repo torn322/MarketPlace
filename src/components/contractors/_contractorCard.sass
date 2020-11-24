@@ -1,0 +1,57 @@
+.contractor-card
+    position: relative
+    width: 100%
+    box-sizing: border-box
+    padding: 25px 25px 25px 65px
+    background-color: #ffffff
+    box-shadow: $shadow
+    border-radius: 5px
+    &__indicator
+        width: 26px
+        height: 26px
+        display: block
+        position: absolute
+        top: 25px
+        left: 25px
+        &_green
+            background-image: url('../img/indicator_green.svg')
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__contractor-status
+        color: $blue
+    &__technology-stack
+        font-weight: 300
+        font-size: 16px
+        color: $black
+    &__underline
+        margin: 10px 0
+        border: 1px solid #E5E5E5
+    &__info-list
+        max-width: 90%
+        margin: 25px 0 0 0 
+        padding: 0
+        list-style: none
+        display: flex
+        justify-content: space-between
+    &__info-label
+        font-size: 14px
+        color: $blue
+        margin-bottom: 10px
+        font-weight: 500
+    &__info-value
+        font-size: 16px
+        font-weight: 300
+    &__btns
+        margin-top: 40px
+        .btn
+            margin-right: 40px
+    &__city
+        font-size: 14px
+        color: $grey
+        width: max-content
+        position: absolute
+        right: 25px
+        bottom: 25px
+
